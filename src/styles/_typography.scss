@@ -1,0 +1,74 @@
+// Import fonts.
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../includes/fonts/Fira_Sans/FiraSans-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Fira Sans';
+  font-weight: 400;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+  font-weight: 600;
+  margin: 1.414em 0 0.5em;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+.h1 {
+  font-size: 36px;
+}
+
+h2,
+.h2 {
+  font-size: 26px;
+}

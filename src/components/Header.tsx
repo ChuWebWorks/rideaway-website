@@ -1,17 +1,16 @@
 import Nav from './Nav';
-import Logo from '../images/logoipsum-logo-33.svg';
 
-const Header = ( props: HeaderProps ) => {
+const Header = () => {
     return (
         <header>
-            <img src={ Logo } alt={ props.title } />
-            <Nav />
+            <div className='bg-royal-blue text-white px-2 py-8'>
+                <div className='container max-w-screen-lg mx-auto flex items-center justify-between'>
+                    <a href="/" className='font-semibold text-xl tracking-tight py-2'>Rideaway</a>
+                    <Nav />
+                </div>
+            </div>
         </header>
     )
-}
-
-type HeaderProps = {
-    title: string,
 }
 
 export default Header

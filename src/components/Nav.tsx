@@ -1,18 +1,19 @@
 const Nav = () => {
+    const navigationLinks = [
+        ['About Us','/'],
+        ['Features','/'],
+        ['Compare Plans','/'],
+        ['Contact Us','/']
+    ].map(([title, url]) => (<a href={url} className="hover:underline">{title}</a>));
+
     return (
-        <nav>
-            <ul>
-                <li>
-                    <a href="google.com">About Us</a>
-                </li>
-                <li>
-                    <a href="google.com">Features</a>
-                </li>
-                <li>
-                    <a href="google.com">Compare Plans</a>
-                </li>
-                <li>
-                    <a href="google.com">Contact Us</a>
+        <nav className=''>
+            <ul className='ml-auto flex items-center space-x-4'>
+
+                { navigationLinks }
+
+                <li className="inline-block px-5 py-2 rounded-full bg-white hover:bg-white-300">
+                    <a href="google.com" className='text-royal-blue font-semibold'>Free Demo</a>
                 </li>
             </ul>
         </nav>
