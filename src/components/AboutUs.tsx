@@ -2,7 +2,10 @@ import AboutUsImage from '../images/About Us Image.png';
 
 const AboutUs = () => {
     return (
-        <section className='aboutus my-10'>
+        <section className='aboutus my-10 relative'>
+            <div className='bg-outer-circle bg-royal-blue opacity-10 rounded-full absolute -left-20 top-20 grid content-center -z-50'>
+                <div className='bg-inner-circle rounded-full bg-white inline-block mx-auto'></div>
+            </div>
             <div className='bg-white px-2 py-8'>
                 <div className='container max-w-screen-lg mx-auto md:grid md:grid-cols-2'>
                     <div className='-ml-10 pr-10'>

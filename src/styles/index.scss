@@ -44,3 +44,27 @@ code {
   max-width: 300px;
   max-height: 350px;
 }
+
+// Background decor.
+.bg-outer-circle {
+  width: 160px;
+  height: 160px;
+}
+.bg-inner-circle {
+  width: 60px;
+  height: 60px;
+}
+.bg-lines--vertical {
+  background-image: url('../images/Header Background.svg');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: bottom left;
+  background-attachment: fixed;
+}
+.bg-lines--horizontal {
+  background-image: url('../images/BG Horizontal Lines.svg');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: bottom left;
+
+}

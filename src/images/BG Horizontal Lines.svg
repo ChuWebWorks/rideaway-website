@@ -1,0 +1,18 @@
+<svg width="1440" height="2056" viewBox="0 0 1440 2056" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="1440" cy="1251" r="133" fill="#4B47FF" fill-opacity="0.1"/>
+<circle cx="1440" cy="1251" r="45" fill="#F2F2F2"/>
+<line y1="12.5" x2="1440" y2="12.5" stroke="#4B47FF" stroke-opacity="0.25"/>
+<line y1="239.5" x2="1440" y2="239.5" stroke="#4B47FF" stroke-opacity="0.25"/>
+<line y1="466.5" x2="1440" y2="466.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="920.5" x2="1440" y2="920.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="693.5" x2="1440" y2="693.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="1147.5" x2="1440" y2="1147.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="1601.5" x2="1440" y2="1601.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="1374.5" x2="1440" y2="1374.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<line y1="1828.5" x2="1440" y2="1828.5" stroke="#4B47FF" stroke-opacity="0.1"/>
+<path d="M1346.5 12.5C1346.5 18.5751 1341.58 23.5 1335.5 23.5C1329.42 23.5 1324.5 18.5751 1324.5 12.5C1324.5 6.42487 1329.42 1.5 1335.5 1.5C1341.58 1.5 1346.5 6.42487 1346.5 12.5Z" fill="#F2F2F2" stroke="#4B47FF" stroke-width="3"/>
+<circle cx="968.5" cy="466.5" r="12.5" fill="#4B47FF"/>
+<circle cx="103.5" cy="1828.5" r="12.5" fill="#4B47FF"/>
+<path d="M1248.5 1374.5C1248.5 1378.37 1245.37 1381.5 1241.5 1381.5C1237.63 1381.5 1234.5 1378.37 1234.5 1374.5C1234.5 1370.63 1237.63 1367.5 1241.5 1367.5C1245.37 1367.5 1248.5 1370.63 1248.5 1374.5Z" fill="#FF5959" stroke="#4B47FF"/>
+<path d="M114.5 920.5C114.5 926.575 109.575 931.5 103.5 931.5C97.4249 931.5 92.5 926.575 92.5 920.5C92.5 914.425 97.4249 909.5 103.5 909.5C109.575 909.5 114.5 914.425 114.5 920.5Z" fill="#F2F2F2" stroke="#4B47FF" stroke-width="3"/>
+</svg>

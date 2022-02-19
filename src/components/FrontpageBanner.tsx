@@ -6,8 +6,9 @@ import AppleStoreImage from '../images/Apple Store.png';
 const FrontpageBanner = () => {
     return (
         <section className='frontpage-banner mb-10'>
-            <div className='bg-royal-blue px-2'>
-                <div className='container max-w-screen-lg mx-auto md:grid md:grid-cols-2'>
+            <div className='bg-royal-blue px-2 relative'>
+                <div className='bg-lines--vertical absolute -z-50 left-0 right-0 top-0 bottom-0 m-auto'></div>
+                <div className='container max-w-screen-lg mx-auto md:grid md:grid-cols-2 relative z-1'>
                     <div className="text-white py-10 pr-20">
                         <h1 className="my-4">All-In-One Group Ride Tracking App</h1>
                         <p className='my-4'>

@@ -5,7 +5,10 @@ import BottomCTAImg from '../images/Bottom CTA.png';
 const BottomCTA = () => {
     return (
         <section className='bottom-cta my-10'>
-            <div className='container max-w-screen-lg mx-auto bg-royal-blue grid md:grid-cols-2 rounded-2xl'>
+            <div className='container max-w-screen-lg mx-auto bg-royal-blue grid md:grid-cols-2 rounded-2xl relative overflow-hidden'>
+                <div className='bg-outer-circle bg-white opacity-30 rounded-full absolute left-24 -bottom-20 grid content-center -z-50'>
+                    <div className='bg-inner-circle rounded-full bg-royal-blue inline-block mx-auto'></div>
+                </div>
                 <div className='text-white pt-10 pb-10 px-10'>
                     <h2 className='text-3xl'>Keep The Pack Together</h2>
                     <p className='mb-5'>

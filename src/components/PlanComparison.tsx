@@ -2,7 +2,10 @@ import CheckIcon from '../images/check.png';
 
 const PlanComparison = () => {
     return (
-        <section className='plan-comparison my-5'>
+        <section className='plan-comparison my-5 relative'>
+            <div className='bg-outer-circle bg-royal-blue rounded-full absolute -left-20 top-20 grid content-center -z-50'>
+                <div className='bg-inner-circle rounded-full bg-white inline-block mx-auto'></div>
+            </div>
             <div className='container max-w-screen-lg mx-auto px-2 py-1'>
                 <h2 className='text-center text-3xl'>Plan Comparison</h2>
                 <p className='text-center max-w-prose mx-auto mb-10'>
