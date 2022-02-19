@@ -7,7 +7,7 @@ const BottomCTA = () => {
         <section className='bottom-cta my-10'>
             <div className='container max-w-screen-lg mx-auto bg-royal-blue grid md:grid-cols-2 rounded-2xl'>
                 <div className='text-white pt-10 pb-10 px-10'>
-                    <h2>Keep The Pack Together</h2>
+                    <h2 className='text-3xl'>Keep The Pack Together</h2>
                     <p className='mb-5'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>

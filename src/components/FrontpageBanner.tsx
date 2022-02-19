@@ -13,7 +13,7 @@ const FrontpageBanner = () => {
                         <p className='my-4'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         </p>
-                        <a href='/' className="inline-block px-5 py-2 rounded-full bg-white text-royal-blue font-semibold my-2">Free Demo</a>
+                        <a href='/' className="inline-block px-7 py-2 rounded-full bg-white text-royal-blue font-semibold my-2">Free Demo</a>
                         <a href='/' className="inline-block mx-4 hover:underline">Learn More</a>
                     </div>
                     <div className="relative">

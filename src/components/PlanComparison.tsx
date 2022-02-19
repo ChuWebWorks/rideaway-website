@@ -4,7 +4,7 @@ const PlanComparison = () => {
     return (
         <section className='plan-comparison my-5'>
             <div className='container max-w-screen-lg mx-auto px-2 py-1'>
-                <h2 className='text-center'>Plan Comparison</h2>
+                <h2 className='text-center text-3xl'>Plan Comparison</h2>
                 <p className='text-center max-w-prose mx-auto mb-10'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                 </p>
@@ -50,8 +50,8 @@ const PlanComparison = () => {
                         </tr>
                         <tr>
                             <td className='bg-white w-1/2'></td>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-5 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-5 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
+                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
+                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
 
                         </tr>
                     </tbody>
