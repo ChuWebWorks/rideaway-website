@@ -3,6 +3,7 @@ import FrontpageBanner from '../components/FrontpageBanner';
 import AboutUs from '../components/AboutUs';
 import Features from '../components/Features';
 import PlanComparison from '../components/PlanComparison';
+import BottomCTA from '../components/BottomCTA';
 import Footer from '../components/Footer';
 
 const FrontPage = () => {
@@ -13,6 +14,7 @@ const FrontPage = () => {
             <AboutUs />
             <Features />
             <PlanComparison />
+            <BottomCTA />
             <Footer />
         </>
     )
