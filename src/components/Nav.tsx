@@ -13,7 +13,7 @@ const Nav = () => {
                 { navigationLinks }
 
                 <li className="inline-block">
-                    <a href="google.com" className='px-7 py-2 rounded-full bg-white hover:bg-white-300 text-royal-blue font-semibold'>Free Demo</a>
+                    <a href="google.com" className='inline-block px-7 py-1 rounded-full border-2 border-white bg-white text-royal-blue font-semibold hover:bg-transparent hover:text-white hover:no-underline ease-in-out duration-100'>Free Demo</a>
                 </li>
             </ul>
         </nav>

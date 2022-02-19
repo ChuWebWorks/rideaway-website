@@ -53,8 +53,8 @@ const PlanComparison = () => {
                         </tr>
                         <tr>
                             <td className='bg-white w-1/2'></td>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-2 rounded-full bg-royal-blue text-white font-semibold'>Get Started</a></td>
+                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-1 my-4 rounded-full bg-royal-blue text-white font-semibold border-royal-blue border-2 hover:bg-transparent hover:text-royal-blue hover:no-underline ease-in-out duration-100'>Get Started</a></td>
+                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-1 my-4 rounded-full bg-royal-blue text-white font-semibold border-royal-blue border-2 hover:bg-transparent hover:text-royal-blue hover:no-underline ease-in-out duration-100'>Get Started</a></td>
 
                         </tr>
                     </tbody>

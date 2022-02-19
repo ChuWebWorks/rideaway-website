@@ -21,7 +21,7 @@ const Features = () => {
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-2 rounded-full border-2 border-royal-blue text-royal-blue font-semibold my-4'>Learn More</a>
+                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
                                 </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@ const Features = () => {
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-2 rounded-full border-2 border-royal-blue text-royal-blue font-semibold my-4'>Learn More</a>
+                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
                                 </div>
                         </div>
                         <div className='relative grid content-center'>
@@ -53,7 +53,7 @@ const Features = () => {
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-2 rounded-full border-2 border-royal-blue text-royal-blue font-semibold my-4'>Learn More</a>
+                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
                                 </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const Features = () => {
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-2 rounded-full border-2 border-royal-blue text-royal-blue font-semibold my-4'>Learn More</a>
+                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
                                 </div>
                         </div>
                         <div className='relative grid content-center'>
