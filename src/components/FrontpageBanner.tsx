@@ -5,10 +5,10 @@ import AppleStoreImage from '../images/Apple Store.png';
 
 const FrontpageBanner = () => {
     return (
-        <section className='mb-10'>
+        <section className='frontpage-banner mb-10'>
             <div className='bg-royal-blue px-2'>
-                <div className='container max-w-screen-lg mx-auto grid grid-cols-2'>
-                    <div className="text-white max-w-prose py-10 pr-20">
+                <div className='container max-w-screen-lg mx-auto md:grid md:grid-cols-2'>
+                    <div className="text-white py-10 pr-20">
                         <h1 className="my-4">All-In-One Group Ride Tracking App</h1>
                         <p className='my-4'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -17,7 +17,7 @@ const FrontpageBanner = () => {
                         <a href='/' className="inline-block mx-4 hover:underline">Learn More</a>
                     </div>
                     <div className="relative">
-                        <img className='left-0 right-0 mx-auto absolute rideaway__image' src={RideawayImage} />
+                        <img className='left-0 right-0 mx-auto md:absolute rideaway__image' src={RideawayImage} />
                     </div>
                 </div>
             </div>
