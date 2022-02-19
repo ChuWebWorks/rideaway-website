@@ -7,7 +7,23 @@
 body {
   margin: 0;
 }
-
+table {
+  thead {
+    th {
+      padding: .75em 1em;
+    }
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background: #F2F2F2;
+      }
+    }
+    td {
+      padding: .75em 1em;
+    }
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

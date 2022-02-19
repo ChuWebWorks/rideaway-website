@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import FrontpageBanner from '../components/FrontpageBanner';
 import AboutUs from '../components/AboutUs';
 import Features from '../components/Features';
-import Body from '../components/Body';
+import PlanComparison from '../components/PlanComparison';
 import Footer from '../components/Footer';
 
 const FrontPage = () => {
@@ -12,7 +12,7 @@ const FrontPage = () => {
             <FrontpageBanner />
             <AboutUs />
             <Features />
-            <Body />
+            <PlanComparison />
             <Footer />
         </>
     )
