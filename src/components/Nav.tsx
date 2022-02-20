@@ -7,7 +7,7 @@ const Nav = () => {
     ].map(([title, url]) => (<a href={url} className="hover:underline">{title}</a>));
 
     return (
-        <nav className=''>
+        <nav className='hidden md:block'>
             <ul className='ml-auto flex items-center space-x-4'>
 
                 { navigationLinks }
