@@ -19,10 +19,15 @@ table {
         background: #F2F2F2;
       }
     }
-    td {
+    td,
+    th {
       padding: .75em 1em;
     }
   }
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -31,12 +36,13 @@ code {
 
 .rideaway__image {
   max-width: 450px;
-
-  
 }
 .features__image-background {
-  min-width: 350px;
+  min-width: 250px;
   min-height: 210px;
+  @media screen and (min-width: 768px) {
+    min-width: 350px;
+  }
 }
 .features__image {
   max-width: 300px;
@@ -45,6 +51,70 @@ code {
 .bottom-cta__image {
   max-width: 300px;
   max-height: 350px;
+}
+.responsive-table {
+  thead {
+    th {
+      &:first-child {
+        font-size: 26px;
+      }
+      &:not(:first-child) {
+        background-color: #4B47FF;
+        border: 1px solid #3B38BB;
+        color: #FFF;
+      }
+    }
+  }
+  tbody {
+    th {
+      &:first-child {
+        text-align: left;
+        padding-left: 1.65em;
+      }
+    }
+  }
+  
+  @media screen and ( max-width:767px ) {
+    tr {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    th,
+    td {
+      padding: 10px 15px;
+    }
+    tbody {
+      th {
+        &:first-child {
+          background-color: #F2F2F2;
+          font-weight: 400;
+          text-align: center;
+        }
+      }
+      td {
+        &:not(:first-child) {
+          background-color: #FFF;
+        }
+      }
+    }
+    th {
+      &:first-child {
+        text-align: center;
+        flex: 1 0 100%;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+    th,
+    td {
+      &:not(:first-child) {
+        flex:  0 0 50%;
+        max-width: 50%;
+        width: 100%;
+      }
+    }
+  }
 }
 
 // Background decor.
@@ -60,13 +130,23 @@ code {
   background-image: url('../images/Header Background.svg');
   background-size: auto;
   background-repeat: repeat;
-  background-position: bottom left;
-  background-attachment: fixed;
+  background-position: center top;
+  opacity: .4;
+
+  @media (min-width:768px) {
+    background-attachment: fixed;
+    background-position: bottom left;
+    opacity: 1;
+  }
 }
 .bg-lines--horizontal {
   background-image: url('../images/BG Horizontal Lines.svg');
   background-size: auto;
   background-repeat: repeat;
   background-position: bottom left;
+  opacity: .4;
 
+  @media (min-width:768px) {
+    opacity: 1;
+  }
 }

@@ -11,7 +11,7 @@ const Header = () => {
                 <div className='bg-lines--vertical absolute left-0 right-0 top-0 bottom-0 m-auto'></div>
                 <div className='container max-w-screen-lg mx-auto flex items-center justify-between relative z-1'>
                     <a href="/" className='font-semibold text-xl tracking-tight py-2'>Rideaway</a>
-                    <button><img src={OpenMenuIcon} /></button>
+                    <button className='md:hidden'><img src={OpenMenuIcon} /></button>
                     <Nav />
                 </div>
             </div>
