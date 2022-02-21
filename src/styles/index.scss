@@ -4,6 +4,28 @@
 
 @import '_typography';
 
+// Main navigation
+@media screen and ( max-width: 767px ) {
+  .open-menu {
+    overflow: hidden;
+
+    .mobile-nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 4em;
+      width: 100%;
+      overflow: hidden;
+      height: 100vh;
+  
+      ul {
+        height: 100%;
+        background-color: #4B47FF;
+      }
+    }
+  }
+}
 body {
   margin: 0;
 }
