@@ -1,5 +1,5 @@
-import GooglePlayStoreImage from '../images/Google Play Store.png';
-import AppleStoreImage from '../images/Apple Store.png';
+import AppStoreButtons from './ui/AppStoreButtons';
+
 import BottomCTAImg from '../images/Bottom CTA.png';
 
 const BottomCTA = () => {
@@ -19,8 +19,7 @@ const BottomCTA = () => {
                     <img src={BottomCTAImg} className='left-0 right-0 mx-auto relative  rideaway__image w-full z-1' />
                 </div>
                 <div className='relative text-center md:text-left mb-5 md:mb-0 md:px-10'>
-                    <a href='https://www.apple.com/app-store/' target='_blank' className='inline-block mx-2 md:mx-0 md:mr-4 md:px-0 md:mr-2 md:ml-0 shadow-2xl'><img className='' src={AppleStoreImage} /></a>
-                    <a href='https://play.google.com/store?hl=en_US&gl=US' target='_blank' className='inline-block shadow-2xl'><img className='' src={GooglePlayStoreImage} /></a>
+                    <AppStoreButtons />
                 </div>
             </div>
         </section>

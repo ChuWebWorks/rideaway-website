@@ -1,8 +1,7 @@
 import Button from './ui/Button';
+import AppStoreButtons from './ui/AppStoreButtons';
 
 import RideawayImage from '../images/Rideaway-Phones.png';
-import GooglePlayStoreImage from '../images/Google Play Store.png';
-import AppleStoreImage from '../images/Apple Store.png';
 
 
 const FrontpageBanner = () => {
@@ -26,9 +25,8 @@ const FrontpageBanner = () => {
                     </div>
                 </div>
             </div>
-            <div className="container text-center md:px-2 md:text-left max-w-screen-lg mx-auto py-10">
-                <a href='https://www.apple.com/app-store/' target='_blank' className='inline-block mx-2 md:px-0 md:mr-2 md:ml-0 shadow-2xl'><img className='' src={AppleStoreImage} /></a>
-                <a href='https://play.google.com/store?hl=en_US&gl=US' target='_blank' className='inline-block mx-2 shadow-2xl'><img className='' src={GooglePlayStoreImage} /></a>
+            <div className="container text-center md:text-left max-w-screen-lg mx-auto py-10">
+                <AppStoreButtons />
             </div>
         </section>
     )
