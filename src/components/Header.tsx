@@ -1,10 +1,8 @@
 import Nav from './Nav';
-import OpenMenuIcon from '../images/Open Menu Icon.svg';
+import MenuIcon from './ui/MenuIcon';
 
 const Header = () => {
-    const toggleMenu = () => {
-        console.log( 'open menu' );
-    }
+
     return (
         <header>
             <div className='masthead bg-royal-blue text-white px-2 py-8 relative overflow-x-hidden'>
@@ -14,7 +12,7 @@ const Header = () => {
                 <div className='bg-lines--vertical absolute left-0 right-0 top-0 bottom-0 m-auto'></div>
                 <div className='container max-w-screen-lg mx-auto flex items-center justify-between relative z-1'>
                     <a href="/" className='font-semibold text-xl py-2 relative z-50'>Rideaway</a>
-                    <button className='relative z-50 md:hidden' onClick={toggleMenu}><img src={OpenMenuIcon} /></button>
+                    <MenuIcon />
                     <Nav />
                 </div>
             </div>

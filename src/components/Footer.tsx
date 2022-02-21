@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
             <div className="container max-w-screen-lg mx-auto">
                 <div className='px-10'>
-                <p>© 2021 Rideaway</p>
+                <p>© 2022 Rideaway</p>
                 </div>
             </div>
         </footer>
