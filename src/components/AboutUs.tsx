@@ -1,3 +1,5 @@
+import Button from './ui/Button';
+
 import AboutUsImage from '../images/About Us Image.png';
 
 const AboutUs = () => {
@@ -13,10 +15,12 @@ const AboutUs = () => {
                     </div>
                     <div className='order-1 md:order-2 md:pl-10'>
                         <h2 className='text-3xl mt-0'>About Us</h2>
-                        <p>
+                        <p className='my-4'>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
-                        <a href="/" className='inline-block px-7 py-1 my-4 rounded-full bg-royal-blue text-white font-semibold border-royal-blue border-2 hover:bg-transparent hover:text-royal-blue hover:no-underline ease-in-out duration-100'>Get In Touch</a>
+      
+                        <Button href='/' title='Get In Touch' type='primary' buttonColor='royal-blue'/>
+
                     </div>
                 </div>
             </div>

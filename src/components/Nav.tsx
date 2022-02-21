@@ -1,3 +1,5 @@
+import Button from './ui/Button';
+
 const Nav = () => {
     const navigationLinks = [
         ['About Us','/'],
@@ -12,8 +14,8 @@ const Nav = () => {
 
                 { navigationLinks }
 
-                <li className="relative z-50">
-                    <a href="google.com" className='inline-block w-full px-7 py-2 mt-10 md:mt-0 text-center rounded-lg border-2 border-white bg-white text-royal-blue font-semibold hover:bg-transparent hover:text-white hover:no-underline ease-in-out duration-100'>Free Demo</a>
+                <li className="relative z-50 mt-10 md:mt-0">
+                    <Button href='/' title='Free Demo' type='primary' buttonColor='white'/>
                 </li>
             </ul>
         </nav>

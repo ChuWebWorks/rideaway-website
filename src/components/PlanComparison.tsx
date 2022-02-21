@@ -1,3 +1,5 @@
+import Button from './ui/Button';
+
 import CheckIcon from '../images/check.png';
 
 const PlanComparison = () => {
@@ -53,8 +55,8 @@ const PlanComparison = () => {
                         </tr>
                         <tr>
                             <th className='hidden md:table-cell bg-white w-1/2'></th>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-1 my-4 rounded-full bg-royal-blue text-white font-semibold border-royal-blue border-2 hover:bg-transparent hover:text-royal-blue hover:no-underline ease-in-out duration-100'>Get Started</a></td>
-                            <td className='bg-white text-center'><a href="/" className='inline-block px-7 py-1 my-4 rounded-full bg-royal-blue text-white font-semibold border-royal-blue border-2 hover:bg-transparent hover:text-royal-blue hover:no-underline ease-in-out duration-100'>Get Started</a></td>
+                            <td className='bg-white text-center'><Button href='/' title='Get Started' type='primary' buttonColor='royal-blue' /></td>
+                            <td className='bg-white text-center'><Button href='/' title='Get Started' type='primary' buttonColor='royal-blue' /></td>
 
                         </tr>
                     </tbody>

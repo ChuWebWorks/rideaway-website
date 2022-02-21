@@ -33,7 +33,7 @@ const MenuIcon = () => {
             document.body.classList.remove('open-menu');
             window.removeEventListener('resize', checkSize);
         }
-    })
+    }, [menu, size])
 
     return <button className='relative z-50 md:hidden' onClick={toggleMenuHandler}><img src={menu.menuIcon} /></button>
 }

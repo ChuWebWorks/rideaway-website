@@ -1,3 +1,5 @@
+import Button from './ui/Button';
+
 import AddFriendsImg from '../images/Add Friends.png';
 import KeepTrackImg from '../images/Keep Track.png';
 import PlanRoutesImg from '../images/Plan Routes.png';
@@ -18,11 +20,12 @@ const Features = () => {
                         <div className='md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
                                 <h3 className='text-2xl'>Keep Track of Where Everyone Is In Your Group Ride</h3>
-                                <p>
+                                <p className='my-4'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
-                                </div>
+
+                                <Button href='/' title='Learn More' type='secondary' buttonColor='royal-blue' />
+                            </div>
                         </div>
                     </div>
 
@@ -30,11 +33,11 @@ const Features = () => {
                         <div className='order-2 md:order-1 md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
                                 <h3 className='text-2xl'>Know When Someone Has Separated Real-Time</h3>
-                                <p>
+                                <p className='my-4'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
-                                </div>
+                                <Button href='/' title='Learn More' type='secondary' buttonColor='royal-blue' />
+                            </div>
                         </div>
                         <div className='order-1 md:order-2 relative grid content-center'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
@@ -50,11 +53,11 @@ const Features = () => {
                         <div className='md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
                                 <h3 className='text-2xl'>Easily Invite Participants</h3>
-                                <p>
+                                <p className='my-4'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
-                                </div>
+                                <Button href='/' title='Learn More' type='secondary' buttonColor='royal-blue' />
+                            </div>
                         </div>
                     </div>
 
@@ -62,11 +65,11 @@ const Features = () => {
                         <div className='order-2 md:order-1 md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
                                 <h3 className='text-2xl'>Keep Track of Where Everyone Is In Your Group Ride</h3>
-                                <p>
+                                <p className='my-4'>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                                 </p>
-                                <a href="/" className='inline-block px-7 py-1 my-4 rounded-full border-2 border-royal-blue text-royal-blue font-semibold hover:bg-royal-blue hover:text-white hover:no-underline ease-in-out duration-100'>Learn More</a>
-                                </div>
+                                <Button href='/' title='Learn More' type='secondary' buttonColor='royal-blue' />
+                            </div>
                         </div>
                         <div className='order-1 md:order-2 relative grid content-center mb-5'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
