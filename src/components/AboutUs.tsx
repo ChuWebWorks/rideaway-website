@@ -1,14 +1,18 @@
 import Button from './ui/Button';
+import BgCircle from './ui/BgCircle';
 
-import AboutUsImage from '../images/About Us Image.png';
+import AboutUsImage from '../images/About_Us_Image.png';
 
 const AboutUs = () => {
     return (
         <section className='aboutus md:my-10 relative overflow-x-hidden'>
-            <div className='bg-outer-circle bg-royal-blue opacity-10 rounded-full absolute -right-20 md:-left-20 top-20 grid content-center -z-50'>
+            {/* <div className='bg-outer-circle bg-royal-blue opacity-10 rounded-full absolute -right-20 md:-left-20 top-20 grid content-center -z-50'>
                 <div className='bg-inner-circle rounded-full bg-white inline-block mx-auto'></div>
-            </div>
-            <div className='px-2 md:py-8'>
+            </div> */}
+
+            <BgCircle circleColor='royal-blue' position='-right-20 md:-left-20 top-20 ' opacity='10' />
+
+            <div className='px-2 md:py-8 relative z-50'>
                 <div className='container max-w-screen-lg mx-auto grid md:grid-cols-2'>
                     <div className='order-2 md:order-1 md:-ml-10 md:pr-10'>
                        <img className='mx-auto' src={AboutUsImage} />

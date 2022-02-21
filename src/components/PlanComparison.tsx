@@ -1,14 +1,13 @@
 import Button from './ui/Button';
+import BgCircle from './ui/BgCircle';
 
 import CheckIcon from '../images/check.png';
 
 const PlanComparison = () => {
     return (
         <section className='plan-comparison my-5 relative'>
-            <div className='bg-outer-circle bg-royal-blue rounded-full opacity-10 md:opacity-100 absolute -left-20 top-20 grid content-center -z-50'>
-                <div className='bg-inner-circle rounded-full bg-white inline-block mx-auto'></div>
-            </div>
-            <div className='container max-w-screen-lg mx-auto px-2 py-1 relative z-1'>
+            <BgCircle circleColor='royal-blue' position='-left-20 top-20 ' opacity='10 md:opacity-100'/>
+            <div className='container max-w-screen-lg mx-auto px-2 py-1 relative z-50'>
                 <h2 className='text-center text-3xl'>Plan Comparison</h2>
                 <p className='text-center max-w-prose mx-auto mb-10'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 

@@ -1,4 +1,5 @@
 import AppStoreButtons from './ui/AppStoreButtons';
+import BgCircle from './ui/BgCircle';
 
 import BottomCTAImg from '../images/Bottom CTA.png';
 
@@ -6,9 +7,9 @@ const BottomCTA = () => {
     return (
         <section className='bottom-cta px-2 my-10'>
             <div className='container px-4 mx-auto max-w-screen-lg mx-auto bg-royal-blue rounded-2xl relative grid md:grid-cols-2 md:grid-rows-2 overflow-hidden'>
-                <div className='hidden bg-outer-circle bg-white opacity-30 rounded-full absolute left-24 -bottom-20 md:grid content-center -z-50'>
-                    <div className='bg-inner-circle rounded-full bg-royal-blue inline-block mx-auto'></div>
-                </div>
+
+                <BgCircle circleColor='white' position='-left-full md:left-24 md:-bottom-20 ' opacity='30'/>
+
                 <div className='text-white md:pt-10 md:pb-10 md:px-10'>
                     <h2 className='text-3xl'>Keep The Pack Together</h2>
                     <p className='mb-5'>

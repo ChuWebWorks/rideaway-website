@@ -158,7 +158,6 @@ code {
   @media (min-width:768px) {
     background-attachment: fixed;
     background-position: bottom left;
-    opacity: 1;
   }
 }
 .bg-lines--horizontal {
@@ -169,6 +168,7 @@ code {
   opacity: .4;
 
   @media (min-width:768px) {
-    opacity: 1;
+    background-size: cover;
+    background-position: center;
   }
 }
