@@ -16,7 +16,7 @@ const FrontpageBanner = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         </p>
                         
-                        <Button href='/' title='Free Demo' type='primary' buttonColor='white'/>
+                        <Button href='/dashboard/' title='Free Demo' type='primary' buttonColor='white'/>
                         <a href='/' className="inline-block mx-4 hover:underline">Learn More</a>
                     </div>
                     <div className="relative">

@@ -15,7 +15,7 @@ const Nav = () => {
                 { navigationLinks }
 
                 <li className="relative z-50 mt-10 md:mt-0">
-                    <Button href='/' title='Free Demo' type='primary' buttonColor='white'/>
+                    <Button href='/dashboard/' title='Free Demo' type='primary' buttonColor='white'/>
                 </li>
             </ul>
         </nav>
