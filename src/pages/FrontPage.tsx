@@ -10,11 +10,13 @@ const FrontPage = () => {
     return (
         <>
             <Header />
-            <FrontpageBanner />
-            <AboutUs />
-            <Features />
-            <PlanComparison />
-            <BottomCTA />
+            <main>
+                <FrontpageBanner />
+                <AboutUs />
+                <Features />
+                <PlanComparison />
+                <BottomCTA />
+            </main>
             <Footer />
         </>
     )
