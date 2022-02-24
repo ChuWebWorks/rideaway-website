@@ -1,7 +1,12 @@
-const AppDemo = () => {
-    return (<div>
+import AppHeader from '../components/app-demo/Header';
+import Demo from '../components/app-demo/Demo';
 
-    </div>
+const AppDemo = () => {
+    return (
+        <>
+            <AppHeader />
+            <Demo />
+        </>
     )
 }
 
