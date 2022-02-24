@@ -1,4 +1,5 @@
 import iPhone from '../../images/iphone 13.png';
+import Map from './Map';
 
 const Demo = () => {
     return (
@@ -16,7 +17,7 @@ const Demo = () => {
                 </div>
 
                 <div className='app-main-container min-h-full grid'>
-
+                    <Map />
                 </div>
 
                 <div className='app-notices-container bg-persian-blue text-white grid content-center py-10 px-10'>
