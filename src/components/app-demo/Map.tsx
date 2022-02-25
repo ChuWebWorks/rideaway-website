@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+// @ts-ignore
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 
 // Stylesheets.
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
 // Images.
 import MenuIcon from '../../images/App Demo Menu.svg';
@@ -32,7 +35,14 @@ const Map = () => {
 
         // Add location search control.
         const locationSearch = new MapboxGeocoder({ accessToken: mapboxgl.accessToken});
-        map.current.addControl( locationSearch, 'top-left' );
+        //map.current.addControl( locationSearch, 'top-left' );
+
+        // Add navigation directions.
+        const directionsNavigation = new MapboxDirections({
+            accessToken: mapboxgl.accessToken
+        });
+        map.current.addControl(directionsNavigation, 'top-left');
+
 
         // Add navigation controls.
         const navigationControl = new mapboxgl.NavigationControl();
