@@ -155,15 +155,14 @@ button {
   width: 100%;
   max-width: 390px;
   max-height: 844px;
-  border: 3px solid #2F2E41;
 }
 .mapboxgl-ctrl-top-right,
 .mapboxgl-ctrl-top-left {
-  //top: 1em !important;
+  top: 1em !important;
 }
 .mapboxgl-ctrl-geocoder {
-  //right: -25%;
-  //border-radius: 50px !important;
+  right: -25%;
+  border-radius: 50px !important;
 }
 // Background decor.
 .bg-outer-circle {

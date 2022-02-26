@@ -7,7 +7,7 @@ import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-direct
 // Stylesheets.
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+//import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
 // Images.
 import MenuIcon from '../../images/App Demo Menu.svg';
@@ -17,10 +17,10 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VudGxlbWluaCIsImEiOiJjbDAwZmx4Z3QwNmZlM3BvZ
 const Map = () => {
     const mapContainer = React.useRef<any>(null);
     const map = React.useRef<mapboxgl.Map | null>(null);
-    const [lng, setLng] = useState(-70.25689);
-    const [lat, setLat] = useState(43.6591);
+    const [longitude, setLongitude] = useState(-70.25689);
+    const [latitude, setLatitude] = useState(43.6591);
     const [zoom, setZoom] = useState(12);
-    const [position, setPosition] = useState('top-left');
+    const [position, setPosition] = useState([longitude, latitude]);
     
     // Creates the map.
     useEffect( () => {
@@ -29,27 +29,33 @@ const Map = () => {
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/gentleminh/cl00fq8tp000115ns6euxejua',
-            center: [lng, lat],
-            zoom: zoom
+            center: [longitude, latitude],
+            pitch: 55,
+            zoom: zoom,
         });
 
         // Add location search control.
-        const locationSearch = new MapboxGeocoder({ accessToken: mapboxgl.accessToken});
-        //map.current.addControl( locationSearch, 'top-left' );
-
-        // Add navigation directions.
-        const directionsNavigation = new MapboxDirections({
-            accessToken: mapboxgl.accessToken
+        const locationSearch = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            // @ts-ignore
+            mapboxgl: mapboxgl,
+            marker: {
+                // @ts-ignore
+                color: 'blue',
+            },
         });
-        map.current.addControl(directionsNavigation, 'top-left');
+        map.current.addControl( locationSearch, 'top-left' );
 
+        locationSearch.on('result', function(e) {
+            console.log(e.result.center)
+        })
 
         // Add navigation controls.
         const navigationControl = new mapboxgl.NavigationControl();
         map.current.addControl( navigationControl );
 
         // Add geolocate controls.
-        const geolocateControl = new mapboxgl.GeolocateControl({
+        const geolocate = new mapboxgl.GeolocateControl({
             positionOptions: {
                 enableHighAccuracy: true
             },
@@ -58,7 +64,17 @@ const Map = () => {
             // Draw an arrow next to the location dot to indicate which direction the device is heading.
             showUserHeading: true
         });
-        map.current.addControl( geolocateControl );
+        map.current.addControl( geolocate );
+        map.current.on('load', () => {
+            //geolocate.trigger();
+        })
+
+        // Get user's coordinates when they click on geolocate control.
+        geolocate.on( 'geolocate', (e : any) => {
+            setLatitude(e.coords.latitude);
+            setLongitude(e.coords.longitude);
+            setPosition([longitude, latitude]);
+        });
     });
 
     return (
