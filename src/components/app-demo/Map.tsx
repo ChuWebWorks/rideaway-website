@@ -21,11 +21,44 @@ const Map = () => {
     const [latitude, setLatitude] = useState(43.6591);
     const [zoom, setZoom] = useState(12);
     const [position, setPosition] = useState([longitude, latitude]);
+
+    /**
+     * Create Mapbox controls.
+     */
+
+    // Geocoder controls.
+    const locationSearch = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        // @ts-ignore
+        mapboxgl: mapboxgl,
+        marker: {
+            // @ts-ignore
+            color: 'blue',
+            draggable: true,
+        },
+    });
+
+    // Navigation controls.
+    const navigationControl = new mapboxgl.NavigationControl();
+
+    // Geolocate controls.
+    const geolocate = new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+    });
     
-    // Creates the map.
+    /**
+     * Create map and add controls.
+     **/
     useEffect( () => {
         if ( map.current ) return; // Initialize the map once.
 
+        // Initialize the map.
         map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/gentleminh/cl00fq8tp000115ns6euxejua',
@@ -35,46 +68,42 @@ const Map = () => {
         });
 
         // Add location search control.
-        const locationSearch = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            // @ts-ignore
-            mapboxgl: mapboxgl,
-            marker: {
-                // @ts-ignore
-                color: 'blue',
-            },
-        });
         map.current.addControl( locationSearch, 'top-left' );
+
+        // Add navigation controls.
+        map.current.addControl( navigationControl );
+
+        // Add geolocate control.
+        map.current.addControl( geolocate );
+    });
+
+    // Geocoder effects.
+    useEffect( ()=> {
+        if ( ! map.current ) return; // Wait for map to initialize.
 
         locationSearch.on('result', function(e) {
             console.log(e.result.center)
         })
 
-        // Add navigation controls.
-        const navigationControl = new mapboxgl.NavigationControl();
-        map.current.addControl( navigationControl );
+    });
 
-        // Add geolocate controls.
-        const geolocate = new mapboxgl.GeolocateControl({
-            positionOptions: {
-                enableHighAccuracy: true
-            },
-            // When active the map will receive updates to the device's location as it changes.
-            trackUserLocation: true,
-            // Draw an arrow next to the location dot to indicate which direction the device is heading.
-            showUserHeading: true
-        });
-        map.current.addControl( geolocate );
+     // Geolocate effects.
+     useEffect( ()=> {
+        if ( ! map.current ) return; // Wait for map to initialize.
+
+        // Get user's location on map load.
         map.current.on('load', () => {
-            //geolocate.trigger();
+            geolocate.trigger();
+            setPosition([longitude, latitude]);
         })
 
-        // Get user's coordinates when they click on geolocate control.
-        geolocate.on( 'geolocate', (e : any) => {
+        // Get user's location after they click on geolocate control.
+         geolocate.on( 'geolocate', (e : any) => {
             setLatitude(e.coords.latitude);
             setLongitude(e.coords.longitude);
             setPosition([longitude, latitude]);
-        });
+        }); 
+
     });
 
     return (
