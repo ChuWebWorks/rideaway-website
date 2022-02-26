@@ -15,12 +15,25 @@ import MenuIcon from '../../images/App Demo Menu.svg';
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VudGxlbWluaCIsImEiOiJjbDAwZmx4Z3QwNmZlM3BvZGR3eTc0YjNnIn0._Sfl9X0gUdZ_XY_MlFt6_g';
 
 const Map = () => {
+    // Initial map states.
     const mapContainer = React.useRef<any>(null);
     const map = React.useRef<mapboxgl.Map | null>(null);
     const [longitude, setLongitude] = useState(-70.25689);
     const [latitude, setLatitude] = useState(43.6591);
     const [zoom, setZoom] = useState(12);
     const [position, setPosition] = useState([longitude, latitude]);
+
+    // Initial user's states.
+    const [userPosition, setUserPosition] = useState({
+        userLongitude: 0,
+        userLatitude: 0
+    });
+
+    // Initial destination states.
+    const [destination, setDestination] = useState({
+        destinationLong: 0,
+        destinationLat: 0
+    });
 
     /**
      * Create Mapbox controls.
@@ -31,11 +44,7 @@ const Map = () => {
         accessToken: mapboxgl.accessToken,
         // @ts-ignore
         mapboxgl: mapboxgl,
-        marker: {
-            // @ts-ignore
-            color: 'blue',
-            draggable: true,
-        },
+        marker: false
     });
 
     // Navigation controls.
@@ -81,30 +90,56 @@ const Map = () => {
     useEffect( ()=> {
         if ( ! map.current ) return; // Wait for map to initialize.
 
-        locationSearch.on('result', function(e) {
-            console.log(e.result.center)
-        })
+        const marker = new mapboxgl.Marker({
+            draggable: true,
+            color: 'blue',
+        });
+
+        locationSearch.on( 'result', (e : any) => {
+            marker.setLngLat( e.result.center );
+            // @ts-ignore
+            marker.addTo( map.current ); // This already gets checked.
+
+            setDestination({
+                destinationLong: e.result.center[0],
+                destinationLat: e.result.center[1],
+            });
+        });
+
+        marker.on( 'dragend', (e : any) => {
+            let markerLngLat = e.target.getLngLat();
+            setDestination({
+                destinationLong: markerLngLat['lng'],
+                destinationLat: markerLngLat['lat'],
+            });
+        });
 
     });
 
-     // Geolocate effects.
-     useEffect( ()=> {
+    // Geolocate effects.
+    useEffect( ()=> {
         if ( ! map.current ) return; // Wait for map to initialize.
 
         // Get user's location on map load.
         map.current.on('load', () => {
             geolocate.trigger();
-            setPosition([longitude, latitude]);
         })
 
         // Get user's location after they click on geolocate control.
-         geolocate.on( 'geolocate', (e : any) => {
-            setLatitude(e.coords.latitude);
-            setLongitude(e.coords.longitude);
-            setPosition([longitude, latitude]);
+        geolocate.on( 'geolocate', (e : any) => {
+            setUserPosition({
+                userLongitude: e.coords.longitude,
+                userLatitude: e.coords.latitude,
+            });
         }); 
-
     });
+
+    useEffect( () => {
+        console.log("User's Position: " + userPosition.userLongitude + ', ' + userPosition.userLatitude);
+        console.log("Destination: " + destination.destinationLong + ', ' + destination.destinationLat);
+    }, [userPosition, destination]);
+    
+    
 
     return (
         <div ref={mapContainer} className="map-container relative">
