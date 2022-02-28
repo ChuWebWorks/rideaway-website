@@ -135,9 +135,6 @@ const Map = () => {
                 destinationLat: markerLngLat['lat'],
             });
         });
-        marker.on( 'click', (e : any) => {
-            e.preventDefault();
-        })
     }, []);
 
     // Geolocate effects.
@@ -179,17 +176,18 @@ const Map = () => {
 
         directions.on( 'route', (routes : any) => {
             setDisplayRoute(routes.route.map((r : (any), index : (number)) => {
-                const {distance, duration, geometry} = r;
+                const {distance, duration} = r;
                 return (
-                    <button key={index} className='block bg-royal-blue text-white py-2 px-5 mb-3 rounded-l-full hover:cursor hover:bg-persian-blue ease-in-out duration-100'>Route {index+1}: {(distance * 0.000621371).toFixed(0)}mi, {(duration / 60).toFixed(0)}min.</button>
+                    <button key={index} onClick={() => {setSelectedRoute(r)}} className='block bg-royal-blue text-white py-2 px-5 mb-3 rounded-l-full hover:cursor hover:bg-persian-blue ease-in-out duration-100'>Route {index+1}: {(distance * 0.000621371).toFixed(0)}mi, {(duration / 60).toFixed(0)}min.</button>
                 )
             })
             );
         });
     },[]);
 
-
+    const [selectedRoute, setSelectedRoute] = useState<any>(null);
     const [displayRoute, setDisplayRoute] = useState<any>(null);
+    const directionsRef = React.useRef<any>(null);
 
     useEffect(() => {
         if ( ! map.current ) return; // Wait for map to initialize.
@@ -197,14 +195,26 @@ const Map = () => {
         let isSubscribed = true;
 
         if ( isSubscribed ) {
-            //console.log(directionRoutes);
+            const clickElement = (element : HTMLElement) => {
+                element.click();
+            }
+
+            // We want the Geolocate control to be in an "active" state after user click on a route.
+            // Documentation states that "These interaction states can't be controlled programmatically. Instead, they are set based on user interactions."
+            // https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol
+            // We mimic the user's interaction. When user clicks on the route, the click event is also triggered on the Geolocate button.
+            let element : HTMLElement = document.getElementsByClassName('mapboxgl-ctrl-geolocate')['0'] as HTMLElement;
+            if ( element ) {
+                clickElement( element );
+                directionsRef.current.classList.add('hidden');
+            }
         };
         return () => {
             isSubscribed = false;
         }
-    }, [directionRoutes]);
+    }, [selectedRoute]);
 
-    
+    const [displayDirections, setDisplayDirections] = useState<any>(null);
 
     return (
         <>
@@ -214,14 +224,17 @@ const Map = () => {
             </div>
             <div className='absolute z-20 bottom-0 w-full bg-royal-blue text-white'>
                 <ul className='flex justify-around'>
-                    <li className='inline-block'><button className='py-5 px-5' title='Invite'>Invite</button></li>
-                    <li className='inline-block'><button className='py-5 px-5' title='Routes'>Routes</button></li>
-                    <li className='inline-block'><button className='py-5 px-5' title='Riders'>Riders</button></li>
-                    <li className='inline-block'><button className='py-5 px-5' title='Settings'>Settings</button></li>
+                    <li className='inline-block hover:bg-persian-blue ease-in-out duration-100'><button className='py-5 px-5' title='Invite'>Invite</button></li>
+                    <li className='inline-block hover:bg-persian-blue ease-in-out duration-100'><button className='py-5 px-5' title='Routes'>Routes</button></li>
+                    <li className='inline-block hover:bg-persian-blue ease-in-out duration-100'><button className='py-5 px-5' title='Riders'>Riders</button></li>
+                    <li className='inline-block hover:bg-persian-blue ease-in-out duration-100'><button className='py-5 px-5' title='Settings'>Settings</button></li>
                 </ul>
             </div>
-            <div className='absolute right-0 bottom-28'>
+            <div ref={directionsRef} className='absolute right-0 bottom-28'>
                 {displayRoute}
+            </div>
+            <div className='absolute top-0 left-0 right-0 m-auto z-20 bg-white'>
+                {displayDirections}
             </div>
         </>
     )
