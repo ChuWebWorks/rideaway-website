@@ -9,7 +9,7 @@ const Demo = () => {
             </section>
             <section className='app-demo-container shadow-2xl border-2 rounded-3xl overflow-hidden mx-auto'>
                 
-                <div className='app-main-container min-h-full grid'>
+                <div className='app-main-container min-h-full grid relative'>
                     <Map />
                 </div>
 

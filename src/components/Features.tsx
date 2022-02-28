@@ -15,7 +15,7 @@ const Features = () => {
                     <div className='container max-w-screen-lg mx-auto grid md:grid-cols-2 mb-20'>
                         <div className='relative grid content-center'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
-                            <img src={KeepTrackImg} className='features__image mx-auto relative z-1' />
+                            <img alt='' src={KeepTrackImg} className='features__image mx-auto relative z-1' />
                         </div>
                         <div className='md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
@@ -41,14 +41,14 @@ const Features = () => {
                         </div>
                         <div className='order-1 md:order-2 relative grid content-center'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
-                            <img src={SeparatedImg} className='features__image mx-auto relative z-1' />
+                            <img alt='' src={SeparatedImg} className='features__image mx-auto relative z-1' />
                         </div>
                     </div>
 
                     <div className='container max-w-screen-lg mx-auto md:grid md:grid-cols-2 mb-20'>
                         <div className='relative grid content-center'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
-                            <img src={AddFriendsImg} className='features__image mx-auto relative z-1' />
+                            <img alt='' src={AddFriendsImg} className='features__image mx-auto relative z-1' />
                         </div>
                         <div className='md:pl-10 grid content-center'>
                             <div className='inline-block text-center md:text-left'>
@@ -73,7 +73,7 @@ const Features = () => {
                         </div>
                         <div className='order-1 md:order-2 relative grid content-center mb-5'>
                             <div className='features__image-background bg-royal-blue rounded-2xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'></div>
-                            <img src={PlanRoutesImg} className='features__image mx-auto relative z-1' />
+                            <img alt='' src={PlanRoutesImg} className='features__image mx-auto relative z-1' />
                         </div>
                     </div>
                 </div>

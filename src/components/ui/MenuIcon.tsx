@@ -35,7 +35,7 @@ const MenuIcon = () => {
         }
     }, [menu, size])
 
-    return <button className='relative z-50 md:hidden' onClick={toggleMenuHandler}><img src={menu.menuIcon} /></button>
+    return <button className='relative z-50 md:hidden' onClick={toggleMenuHandler}><img alt='' src={menu.menuIcon} /></button>
 }
 
 export default MenuIcon

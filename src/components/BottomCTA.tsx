@@ -17,7 +17,7 @@ const BottomCTA = () => {
                     </p>
                 </div>
                 <div className='relative min-h-max md:row-span-2 md:pt-10 md:px-10 mb-5'>
-                    <img src={BottomCTAImg} className='left-0 right-0 mx-auto relative  rideaway__image w-full z-1' />
+                    <img alt='' src={BottomCTAImg} className='left-0 right-0 mx-auto relative  rideaway__image w-full z-1' />
                 </div>
                 <div className='relative text-center md:text-left mb-5 md:mb-0 md:px-10'>
                     <AppStoreButtons />

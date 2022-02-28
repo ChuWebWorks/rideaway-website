@@ -82,7 +82,7 @@ const Map = () => {
     // Array of direction routes. 
     // Distance is stored in meters.
     // Duration is stored in seconds.
-    const [directionRoutes, setDirectionRoutes] = useState<Array<object>>([]);
+    const [directionRoutes, setDirectionRoutes] = useState<any>([]);
     
     /**
      * Create map and add controls.
@@ -178,17 +178,18 @@ const Map = () => {
         if ( ! map.current ) return; // Wait for map to initialize.
 
         directions.on( 'route', (routes : any) => {
-            routes.route.forEach( (r : any) => {
-                setDirectionRoutes([
-                    {
-                        route: r.geometry,
-                        distance: r.distance,
-                        duration: r.duration
-                    }
-                ]);
-            });
+            setDisplayRoute(routes.route.map((r : (any), index : (number)) => {
+                const {distance, duration, geometry} = r;
+                return (
+                    <button key={index} className='block bg-royal-blue text-white py-2 px-5 mb-3 rounded-l-full hover:cursor hover:bg-persian-blue ease-in-out duration-100'>Route {index+1}: {(distance * 0.000621371).toFixed(0)}mi, {(duration / 60).toFixed(0)}min.</button>
+                )
+            })
+            );
         });
     },[]);
+
+
+    const [displayRoute, setDisplayRoute] = useState<any>(null);
 
     useEffect(() => {
         if ( ! map.current ) return; // Wait for map to initialize.
@@ -197,16 +198,19 @@ const Map = () => {
 
         if ( isSubscribed ) {
             //console.log(directionRoutes);
-        }
+        };
         return () => {
             isSubscribed = false;
         }
     }, [directionRoutes]);
 
+    
+
     return (
-        <div ref={mapContainer} className="map-container relative">
+        <>
+            <div ref={mapContainer} className="map-container relative/"/>
             <div className='absolute left-0 bottom-16 z-20'>
-                <img src={MenuIcon} />
+                <button><img alt='' src={MenuIcon} /></button>
             </div>
             <div className='absolute z-20 bottom-0 w-full bg-royal-blue text-white'>
                 <ul className='flex justify-around'>
@@ -216,8 +220,10 @@ const Map = () => {
                     <li className='inline-block'><button className='py-5 px-5' title='Settings'>Settings</button></li>
                 </ul>
             </div>
-
-        </div>
+            <div className='absolute right-0 bottom-28'>
+                {displayRoute}
+            </div>
+        </>
     )
 }
 

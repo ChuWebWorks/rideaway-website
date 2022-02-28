@@ -21,7 +21,7 @@ const FrontpageBanner = () => {
                     </div>
                     <div className="relative">
                         <div className='absolute h-1/2 w-screen -left-2 bottom-0 bg-white -z-50 md:hidden'></div>
-                        <img className='left-0 right-0 mx-auto relative md:absolute rideaway__image w-full z-1' src={RideawayImage} />
+                        <img alt='' className='left-0 right-0 mx-auto relative md:absolute rideaway__image w-full z-1' src={RideawayImage} />
                     </div>
                 </div>
             </div>

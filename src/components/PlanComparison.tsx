@@ -24,33 +24,33 @@ const PlanComparison = () => {
                     <tbody>
                         <tr>
                             <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
                         </tr>
                         <tr>
                             <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
                         </tr>
                         <tr>
                             <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
-                        </tr>
-                        <tr>
-                            <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
-                            <td></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
                         </tr>
                         <tr>
                             <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
                             <td></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
                         </tr>
                         <tr>
                             <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
                             <td></td>
-                            <td className='text-center'><img src={CheckIcon} className='inline-block'/></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
+                        </tr>
+                        <tr>
+                            <th scope='row' className='w-1/2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                            <td></td>
+                            <td className='text-center'><img alt='' src={CheckIcon} className='inline-block'/></td>
                         </tr>
                         <tr>
                             <th className='hidden md:table-cell bg-white w-1/2'></th>

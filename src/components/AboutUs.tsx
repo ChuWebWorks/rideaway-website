@@ -15,7 +15,7 @@ const AboutUs = () => {
             <div className='px-2 md:py-8 relative z-50'>
                 <div className='container max-w-screen-lg mx-auto grid md:grid-cols-2'>
                     <div className='order-2 md:order-1 md:-ml-10 md:pr-10'>
-                       <img className='mx-auto' src={AboutUsImage} />
+                       <img alt='' className='mx-auto' src={AboutUsImage} />
                     </div>
                     <div className='order-1 md:order-2 md:pl-10'>
                         <h2 className='text-3xl mt-0'>About Us</h2>
