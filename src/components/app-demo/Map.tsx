@@ -60,41 +60,63 @@ const Map = () => {
         // Draw an arrow next to the location dot to indicate which direction the device is heading.
         showUserHeading: true
     });
+
+    // Directions.
+    const directions = new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        unit: 'imperial',
+        profile: 'mapbox/driving-traffic',
+        alternatives: true,
+        controls: false,
+        steps: true,
+        banner_instructions: true,
+        interactive: false,
+        exclude: 'toll',
+        // Use geometries to decide which alternate route to take.
+    });
+    const marker = new mapboxgl.Marker({
+        draggable: true,
+        color: 'blue',
+    });
+
+    // Array of direction routes. 
+    // Distance is stored in meters.
+    // Duration is stored in seconds.
+    const [directionRoutes, setDirectionRoutes] = useState<Array<object>>([]);
     
     /**
      * Create map and add controls.
      **/
     useEffect( () => {
-        if ( map.current ) return; // Initialize the map once.
+        if ( ! map.current ) {
+            // Initialize the map.
+            map.current = new mapboxgl.Map({
+                container: mapContainer.current,
+                style: 'mapbox://styles/gentleminh/cl00fq8tp000115ns6euxejua',
+                center: [longitude, latitude],
+                //pitch: 55,
+                zoom: zoom,
+            });
 
-        // Initialize the map.
-        map.current = new mapboxgl.Map({
-            container: mapContainer.current,
-            style: 'mapbox://styles/gentleminh/cl00fq8tp000115ns6euxejua',
-            center: [longitude, latitude],
-            pitch: 55,
-            zoom: zoom,
-        });
+            // Add location search control.
+            map.current.addControl( locationSearch, 'top-left' );
 
-        // Add location search control.
-        map.current.addControl( locationSearch, 'top-left' );
+            // Add navigation controls.
+            map.current.addControl( navigationControl );
 
-        // Add navigation controls.
-        map.current.addControl( navigationControl );
+            // Add geolocate control.
+            map.current.addControl( geolocate );
 
-        // Add geolocate control.
-        map.current.addControl( geolocate );
-    });
+            // Add directions controls.
+            map.current.addControl( directions );
+        };
+        return;
+    }, []);
 
     // Geocoder effects.
     useEffect( ()=> {
         if ( ! map.current ) return; // Wait for map to initialize.
-
-        const marker = new mapboxgl.Marker({
-            draggable: true,
-            color: 'blue',
-        });
-
+        
         locationSearch.on( 'result', (e : any) => {
             marker.setLngLat( e.result.center );
             // @ts-ignore
@@ -113,8 +135,10 @@ const Map = () => {
                 destinationLat: markerLngLat['lat'],
             });
         });
-
-    });
+        marker.on( 'click', (e : any) => {
+            e.preventDefault();
+        })
+    }, []);
 
     // Geolocate effects.
     useEffect( ()=> {
@@ -132,14 +156,52 @@ const Map = () => {
                 userLatitude: e.coords.latitude,
             });
         }); 
-    });
+    },[]);
 
-    useEffect( () => {
-        console.log("User's Position: " + userPosition.userLongitude + ', ' + userPosition.userLatitude);
-        console.log("Destination: " + destination.destinationLong + ', ' + destination.destinationLat);
-    }, [userPosition, destination]);
-    
-    
+    useEffect(() => {
+        if ( ! map.current ) return; // Wait for map to initialize.
+
+        let isSubscribed = true;
+
+        if ( isSubscribed ) {
+            directions.setOrigin(userPosition.userLongitude + ',' + userPosition.userLatitude);
+            directions.setDestination(destination.destinationLong + ',' + destination.destinationLat);
+        }
+
+        return () => {
+            isSubscribed = false;
+        }
+
+    }, [destination]);
+
+    useEffect(() => {
+        if ( ! map.current ) return; // Wait for map to initialize.
+
+        directions.on( 'route', (routes : any) => {
+            routes.route.forEach( (r : any) => {
+                setDirectionRoutes([
+                    {
+                        route: r.geometry,
+                        distance: r.distance,
+                        duration: r.duration
+                    }
+                ]);
+            });
+        });
+    },[]);
+
+    useEffect(() => {
+        if ( ! map.current ) return; // Wait for map to initialize.
+
+        let isSubscribed = true;
+
+        if ( isSubscribed ) {
+            //console.log(directionRoutes);
+        }
+        return () => {
+            isSubscribed = false;
+        }
+    }, [directionRoutes]);
 
     return (
         <div ref={mapContainer} className="map-container relative">
