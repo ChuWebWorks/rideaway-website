@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 // @ts-ignore
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import Polyline from '@mapbox/polyline';
 
 // Stylesheets.
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -78,11 +79,6 @@ const Map = () => {
         draggable: true,
         color: 'blue',
     });
-
-    // Array of direction routes. 
-    // Distance is stored in meters.
-    // Duration is stored in seconds.
-    const [directionRoutes, setDirectionRoutes] = useState<any>([]);
     
     /**
      * Create map and add controls.
@@ -171,6 +167,13 @@ const Map = () => {
 
     }, [destination]);
 
+    /**
+     * Logic for directions and routes.
+     */
+     const [selectedRoute, setSelectedRoute] = useState<any>(null);
+     const [displayRoute, setDisplayRoute] = useState<any>(null);
+     const directionsRef = React.useRef<any>(null);
+
     useEffect(() => {
         if ( ! map.current ) return; // Wait for map to initialize.
 
@@ -185,28 +188,68 @@ const Map = () => {
         });
     },[]);
 
-    const [selectedRoute, setSelectedRoute] = useState<any>(null);
-    const [displayRoute, setDisplayRoute] = useState<any>(null);
-    const directionsRef = React.useRef<any>(null);
-
     useEffect(() => {
         if ( ! map.current ) return; // Wait for map to initialize.
 
         let isSubscribed = true;
 
         if ( isSubscribed ) {
+
             const clickElement = (element : HTMLElement) => {
                 element.click();
-            }
+                directionsRef.current.classList.add('hidden');
+            };
 
+            const drawRoute = () => {
+                // Remove the old routes. We only want to display the selected one.
+                directions.removeRoutes();
+
+                // GeoJSON returns coordinates in (lat, long). We need it in (long, lat).
+                const selectedGeoJSON = Polyline.decode( selectedRoute.geometry );
+
+                const selectedLongLat = Array();
+
+                selectedGeoJSON.map((coordinates)  => {
+                    // Swap long and lat positions.
+                    selectedLongLat.push([coordinates[1], coordinates[0]]);
+                } );
+
+                if ( map.current ) {
+                    map.current.addSource('route', {
+                        'type': 'geojson',
+                        'data': {
+                            'type': 'Feature',
+                            'properties': {},
+                                'geometry': {
+                                    'type': 'LineString',
+                                    'coordinates': selectedLongLat
+                                }
+                        }
+                    });
+                    map.current.addLayer({
+                        'id': 'route',
+                        'type': 'line',
+                        'source': 'route',
+                        'layout': {
+                            'line-join': 'round',
+                            'line-cap': 'round'
+                        },
+                        'paint': {
+                            'line-color': '#4B47FF',
+                            'line-width': 8
+                        }
+                    });
+                }
+            }
             // We want the Geolocate control to be in an "active" state after user click on a route.
             // Documentation states that "These interaction states can't be controlled programmatically. Instead, they are set based on user interactions."
             // https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol
             // We mimic the user's interaction. When user clicks on the route, the click event is also triggered on the Geolocate button.
             let element : HTMLElement = document.getElementsByClassName('mapboxgl-ctrl-geolocate')['0'] as HTMLElement;
+            
             if ( element ) {
                 clickElement( element );
-                directionsRef.current.classList.add('hidden');
+                drawRoute();
             }
         };
         return () => {
